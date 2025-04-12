@@ -7,6 +7,8 @@ export const usersTable = pgTable("users_table", {
     .default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
   email: text("email").notNull().unique(),
+  clerkUserId: text("clerkUserId"),
+  imageUrl: text("imageUrl"),
 });
 
 export type InsertUser = typeof usersTable.$inferInsert;
